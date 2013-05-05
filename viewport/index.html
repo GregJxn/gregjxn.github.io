@@ -120,13 +120,13 @@ div.hide_scrollbar #viewport::-webkit-scrollbar{ display: none; }
 </div>
 
 <div id="url_entry">
-URL: <input type="text" id="URL" value="http://www.google.com/"> <a id="reload" class="btn">&#8635;</a>
+URL: <input type="text" id="URL" value="http://music.gregjxn.com/track/recurring-dream/"> <a id="reload" class="btn">&#8635;</a>
 </div>
 
 <div id="border">
 	<div id="label"></div>
 	<div id="device">
-		<iframe id="viewport" src="http://gregjxn.com"><p>Your browser does not support iframes.</p></iframe>
+		<iframe id="viewport" src=""><p>Your browser does not support iframes.</p></iframe>
 	</div>
 	<div id="screensize"><span id="wxh"></span>	<span id="dragit">&#8690;</span></div>
 </div>
@@ -214,6 +214,8 @@ URL: <input type="text" id="URL" value="http://www.google.com/"> <a id="reload" 
 		presetID = 1;
 		aspect = 1;
 		set_preset(presetID);
+
+		load_URL($('#URL').val()); 
 
 		$('#controls').mouseleave();
 	});
