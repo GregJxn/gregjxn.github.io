@@ -99,7 +99,7 @@ var presets = eval([
 	{ 'width': 360,  'height': 640,  'abbr':'nHD', 'desc':'Nokia N8, N97, E7 and X6' },
 	{ 'width': 480,  'height': 640,  'abbr':'VGA', 'desc':'Blackberry Torch 9810' },
 	{ 'width': 480,  'height': 800,  'abbr':'WVGA', 'desc':'Samsung Galaxy I, S, SL, W' },
-	{ 'width': 600,  'height': 800,  'abbr':'SVGA', 'desc':'800x600' },
+	{ 'width': 600,  'height': 800,  'abbr':'SVGA', 'desc':'Small 4:3 tablet/desktop' },
 	{ 'width': 640,  'height': 960,  'abbr':'DVGA', 'desc':'iPhone 4, 4S' },
 	{ 'width': 600,  'height': 1024, 'abbr':'WSVGA', 'desc':'Kindle Fire, Galaxy Tab' },
 	{ 'width': 768,  'height': 1024, 'abbr':'XGA', 'desc':'iPad (1, 2, Mini)' },	
