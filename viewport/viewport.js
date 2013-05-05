@@ -26,6 +26,7 @@ $(document).ready(function() {
 		}
 		presetID=id;
 		$('#abbr').text(presets[id].abbr);
+		$('#description').text(presets[id].desc);
 	}
 	
 	function write_wxh() {  
