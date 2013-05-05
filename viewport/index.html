@@ -13,11 +13,11 @@
 		<div id="menu">
 			<div id="scrollbars"><a href="#"><span>&#9673;</span> Scrollbars</a></div>
 			<div id="settings"><a href="#">Settings</a></div>
-			<div id="aspect"><a href="#">Aspect</a></div>
+			<div id="aspect"><a href="#">Aspect &#8627;</a></div>
 			<div id="presets">Presets 
-				<a id="down">&#9664;</a> 
+				<a class="preset_down">&#9664;</a> 
 				<span id="resolution"></span>
-				<a id="up">&#9654;</a>
+				<a id="preset_up">&#9654;</a>
 			</div>
 		</div>
 	</div>
@@ -28,11 +28,17 @@ URL: <input type="text" id="URL" value="http://music.gregjxn.com/track/recurring
 </div>
 
 <div id="border">
-	<div id="label"></div>
+	<div id="header">
+		<div id="abbr"></div>
+		<div id="screensize">
+			<a href="#" class="preset_down">&#9664;</a> <span id="wxh"></span> <a href="#" class="preset_up">&#9654;</a>
+		</div>
+		<span id="rotate"><a href="#" title="Turn 90&deg;">&#8628;</a></span>
+	</div>
 	<div id="device">
 		<iframe id="viewport" src=""><p>Your browser does not support iframes.</p></iframe>
 	</div>
-	<div id="screensize"><span id="wxh"></span>	<span id="dragit">&#8690;</span></div>
+
 </div>
 <p>More information...</p>
 <div></div>
@@ -43,9 +49,10 @@ URL: <input type="text" id="URL" value="http://music.gregjxn.com/track/recurring
 <!--
 
 TODO LIST
-* Enter a URL
-* Border Width S M L
-* Cookies to remember settings?
-* Resizing with click and drag
+* Lose HUD for less cluttered UI
+* Reintro device examples per preset
+* Border Width S M L ?
+* Cookies to remember settings ?
+* Resizing with click and drag ?
 
 -->

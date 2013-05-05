@@ -1,7 +1,9 @@
 $(document).ready(function() {
 
+	// create some variables
 	var timeoutID, presetID, url, device, aspect, scrollbars;
-	var settings;
+
+	//create some functions
 
 	function load_URL(newurl) {
 		// this will reload iframe no matter what the domain is...
@@ -23,8 +25,7 @@ $(document).ready(function() {
 			set_device_size(presets[id].width, presets[id].height); 
 		}
 		presetID=id;
-		$('#label').text(presets[id].label);
-		document.cookie="preset=" + presetID;
+		$('#abbr').text(presets[id].abbr);
 	}
 	
 	function write_wxh() {  
@@ -44,12 +45,12 @@ $(document).ready(function() {
 		$('#scrollbars a span').html(scrollbars ? '&#9673;' : '&#9678;' );
 	}
 
-	$("#URL").keyup(function (e) {
-		if (e.keyCode == 13) {
-			load_URL($('#URL').val());
-		}
-	});
 
+	// bind some events
+
+	$("#URL").keyup(function (e) {
+		if (e.keyCode == 13) { load_URL($('#URL').val()); }
+	});
 
 	$('#reload').click( function(e){ 
 		$('#URL').val($('iframe').attr('src'));
@@ -62,8 +63,14 @@ $(document).ready(function() {
 		aspect=(aspect==0); 
 	});
 
-	$('#presets #down').click( function(e) { e.preventDefault();set_preset(--presetID); });
-	$('#presets #up').click( function(e) { e.preventDefault();set_preset(++presetID); });
+	$('#rotate a').click( function(e){ 
+		e.preventDefault();
+		set_device_size(device.height(),device.width()); 
+		aspect=(aspect==0); 
+	});	
+
+	$('.preset_down').click( function(e) { e.preventDefault();set_preset(--presetID); });
+	$('.preset_up').click( function(e) { e.preventDefault();set_preset(++presetID); });
 	$('#scrollbars a').click( function(e) { e.preventDefault();toggle_scrollbars(); });
 
 	$('#controls').mouseleave( function(e){ 
@@ -82,23 +89,23 @@ $(document).ready(function() {
 	load_URL($('#URL').val()); 
 
 	$('#controls').mouseleave();
-	
+
 });
 
 var presets = eval([
-	{ 'width': 240,  'height': 320,  'label':'QVGA - Common Low Resolution' },
-	{ 'width': 320,  'height': 480,  'label':'HVGA - iPhone 3, 3G' },
-	{ 'width': 360,  'height': 640,  'label':'nHD - Nokia N8, N97, E7 and X6' },
-	{ 'width': 480,  'height': 640,  'label':'VGA - Blackberry Torch 9810' },
-	{ 'width': 480,  'height': 800,  'label':'WVGA - Samsung Galaxy I, S, SL, W' },
-	{ 'width': 600,  'height': 800,  'label':'SVGA - 800x600' },
-	{ 'width': 640,  'height': 960,  'label':'DVGA - iPhone 4, 4S' },
-	{ 'width': 600,  'height': 1024, 'label':'WSVGA - Kindle Fire, Galaxy Tab' },
-	{ 'width': 768,  'height': 1024, 'label':'XGA - iPad (1, 2, Mini)' },	
-	{ 'width': 640,  'height': 1136, 'label':'iPhone 5' },
-	{ 'width': 720,  'height': 1280, 'label':'HD / WXGA - 720p TV' },
-	{ 'width': 1024, 'height': 1280, 'label':'SXGA - Standard 4:3 desktop' },
-	{ 'width': 1200, 'height': 1600, 'label':'XUGA - Large 4:3 desktop' },
-	{ 'width': 1536, 'height': 2048, 'label':'QXGA - iPad 3 (retina)' },
+	{ 'width': 240,  'height': 320,  'abbr':'QVGA', 'desc':'Common Low Resolution' },
+	{ 'width': 320,  'height': 480,  'abbr':'HVGA', 'desc':'iPhone 3, 3G' },
+	{ 'width': 360,  'height': 640,  'abbr':'nHD', 'desc':'Nokia N8, N97, E7 and X6' },
+	{ 'width': 480,  'height': 640,  'abbr':'VGA', 'desc':'Blackberry Torch 9810' },
+	{ 'width': 480,  'height': 800,  'abbr':'WVGA', 'desc':'Samsung Galaxy I, S, SL, W' },
+	{ 'width': 600,  'height': 800,  'abbr':'SVGA', 'desc':'800x600' },
+	{ 'width': 640,  'height': 960,  'abbr':'DVGA', 'desc':'iPhone 4, 4S' },
+	{ 'width': 600,  'height': 1024, 'abbr':'WSVGA', 'desc':'Kindle Fire, Galaxy Tab' },
+	{ 'width': 768,  'height': 1024, 'abbr':'XGA', 'desc':'iPad (1, 2, Mini)' },	
+	{ 'width': 640,  'height': 1136, 'abbr':'iPhone 5', 'desc':'iPhone 5' },
+	{ 'width': 720,  'height': 1280, 'abbr':'HD / WXGA', 'desc':'720p TV' },
+	{ 'width': 1024, 'height': 1280, 'abbr':'SXGA', 'desc':'Standard 4:3 desktop' },
+	{ 'width': 1200, 'height': 1600, 'abbr':'XUGA', 'desc':'Large 4:3 desktop' },
+	{ 'width': 1536, 'height': 2048, 'abbr':'QXGA', 'desc':'iPad 3 (retina)' },
 ]);
 
