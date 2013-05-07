@@ -9,51 +9,46 @@
 </head>
 
 <body>
-<div id="controls_wrap">
-	<div id="controls">
-		<div id="menu">
-			<div id="scrollbars"><a href="#"><span>&#9673;</span> Scrollbars</a></div>
-			<div id="settings"><a href="#">Settings</a></div>
-			<div id="aspect"><a href="#">Aspect &#8627;</a></div>
-			<div id="presets">Presets 
-				<a class="preset_down">&#9664;</a> 
-				<span id="resolution"></span>
-				<a id="preset_up">&#9654;</a>
+
+	<div id="app_wrapper">
+
+		<div id="url_entry">
+			URL: <input type="text" id="URL" value="http://music.gregjxn.com/track/recurring-dream/"> 
+			<a id="reload_btn" class="btn" title="Reload this URL" >&#8635;</a>
+			<a id="info_btn" class="btn btn-info" title="About this thing"> &#8505; </a>
+			<!-- <a id="faq_btn" class="btn" title="Frequently Asked Questions"> FAQ </a> -->
+		</div>
+
+		<div id="border">
+			<div id="header">
+				<div id="abbr"></div>
+				<div id="screensize">
+					<a href="#" class="preset_down">&#9664;</a> <span id="wxh"></span> <a href="#" class="preset_up">&#9654;</a>
+				</div>
+				<span id="rotate"><a href="#" title="Turn 90&deg;">&#8628;</a></span>
+				<span id="scrollbars"><a href="#" title="Hide/Show Scrollbars">&#8661;</a></span>
+
 			</div>
-		</div>
-	</div>
-</div>
-
-<div id="app_wrapper">
-
-	<div id="url_entry">
-		URL: <input type="text" id="URL" value="http://music.gregjxn.com/track/recurring-dream/"> 
-		<a id="reload_btn" class="btn">&#8635;</a>
-		<a id="info_btn" class="btn btn-info"> &#8505; </a>
-	</div>
-
-	<div id="border">
-		<div id="header">
-			<div id="abbr"></div>
-			<div id="screensize">
-				<a href="#" class="preset_down">&#9664;</a> <span id="wxh"></span> <a href="#" class="preset_up">&#9654;</a>
+			<div id="device">
+				<iframe id="viewport" src=""><p>Your browser does not support iframes.</p></iframe>
 			</div>
-			<span id="rotate"><a href="#" title="Turn 90&deg;">&#8628;</a></span>
+			<div id="description"></div>
 		</div>
-		<div id="device">
-			<iframe id="viewport" src=""><p>Your browser does not support iframes.</p></iframe>
-		</div>
-		<div id="description"></div>
+
+		<div><small>Created by <a href="http://gregjxn.com/">Greg Jackson</a> &copy; 2013</small></div>
+
 	</div>
 
-	<div><small>Created by <a href="http://gregjxn.com/">Greg Jackson</a> &copy; 2013</small></div>
 
-</div>
-<div></div>
-
-<div id="scrolltest" style="width:100px;height:100px;overflow: auto;position:absolute;left:-9999px">
-	<div id="scrolltest_inner" style="width:100%;height:200px"></div>
-</div>
+	<div id="info_text">
+		<h3>Welcome to Viewport</h3>
+		<p><em>A simplified way to test responsive website layouts at common resolutions.</em></p>
+		<p>Recently I've been doing some responsive design work and I found that checking screen resolutions was a bit of a pain.
+		 Dragging the window size works adequately for watching responsive styles "step-down", but it's tricky so get it pixel perfect and my browser windows won't go smaller than 400px wide.</p>
+		 <p>I couldn't find any free simple tools to do exactly what I wanted (including hiding the scrollbar), so I decided to build my own. This is what I made - I found it to be quite useful and I hope you will too.</p>
+		<p><small>Browser specific features: WebKit browsers allow you to hide the scrollbar if you wish (Chrome and Safari). I recommend you use Chrome because Safari's iframes tend to misbehave for me.  I don't recommend using this on a mobile device, but feel free to try it.</small></p>
+		<p><small><em>This webpage is provided as is with no explicit or implied guarantees for the accuracy of results or the provision of any service whatsoever. Individual results may vary. Enjoy.</em></small></p>  
+	</div>
 
 <script src="viewport.js"></script>
 </body>
@@ -61,13 +56,15 @@
 <!--
 
 TODO LIST  &#9432;
-* Add Scrollbar toggle to webkit UI
-* Lose HUD for less cluttered UI
-* Accept URL/preset from the Browser URL
+* Accept URL/size from the Browser URL
 * link/share buttons (limited to iframe src?)
 * Border Width S M L ?
 * Cookies to remember settings ?
 * Resizing with click and drag ?
 * enter cutsom wxh to resize ?
+
+OTHER OPTIONS
+* http://toddmotto.com/labs/responsive/
+* http://www.responsinator.com/
 
 -->

@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 	// create some variables
-	var timeoutID, presetID, url, device, aspect, scrollbars;
+	var presetID, device, aspect;
 
 	//create some functions
 
@@ -10,12 +10,8 @@ $(document).ready(function() {
 		device.html('<iframe id="viewport" src="'+newurl+'"><p>Your browser does not support iframes.</p></iframe>');
 	}
 	
-	function hide_menu() { $('#menu').slideUp(300); }
-	
 	function set_device_size(new_width, new_height) { 
 		device.animate({width: new_width, height: new_height},200,"linear", function(){write_wxh();});
-		//device.width(new_width); device.height(new_height);
-		//write_wxh(); 
 	}
 	
 	function set_preset(id) {
@@ -37,14 +33,12 @@ $(document).ready(function() {
 	}
 
 	function toggle_scrollbars() {
-		if(! navigator.userAgent.match(/webkit/i)){
-			alert('Sorry, hiding scrollbars is only available for webkit browsers. Maybe you should try using Chrome.');
+		if(! navigator.userAgent.match(/webkit/i)) {
+			bootbox.alert('Sorry, hiding scrollbars is only available for <a href="http://en.wikipedia.org/wiki/WebKit">WebKit browsers</a>.<br/>We recommend you try using <a href="www.google.com/chrome/">Chrome</a>.');
 			return;
 		}	
-		scrollbars=(scrollbars==0);
 		$('#device').toggleClass('hide_scrollbar');
 		device.html(device.html()); // a nasty trick to reload the iframe
-		$('#scrollbars a span').html(scrollbars ? '&#9673;' : '&#9678;' );
 	}
 
 
@@ -60,8 +54,10 @@ $(document).ready(function() {
 	});
 
 	$('#info_btn').click( function(e){
-		bootbox.alert(about_text);
+		info_text = $("#info_text").html();
+		bootbox.alert(info_text);
 	});
+
 
 	$('#aspect a').click( function(e){ 
 		e.preventDefault();
@@ -77,15 +73,8 @@ $(document).ready(function() {
 
 	$('.preset_down').click( function(e) { e.preventDefault();set_preset(--presetID); });
 	$('.preset_up').click( function(e) { e.preventDefault();set_preset(++presetID); });
+	
 	$('#scrollbars a').click( function(e) { e.preventDefault();toggle_scrollbars(); });
-
-	$('#controls').mouseleave( function(e){ 
-		timeoutID = window.setTimeout( hide_menu, 1500);
-	});
-	$('#controls').mouseenter( function(e){
-		window.clearTimeout(timeoutID);
-		if($('#menu').is(':hidden')) { $('#menu').slideDown(200); }
-	});
 
 	device = $('#device');
 	presetID = 1;
@@ -93,8 +82,6 @@ $(document).ready(function() {
 	set_preset(presetID);
 
 	load_URL($('#URL').val()); 
-
-	$('#controls').mouseleave();
 
 });
 
@@ -114,12 +101,3 @@ var presets = eval([
 	{ 'width': 1200, 'height': 1600, 'abbr':'XUGA', 'desc':'Large 4:3 desktop' },
 	{ 'width': 1536, 'height': 2048, 'abbr':'QXGA', 'desc':'iPad 3 (retina)' },
 ]);
-
-var about_text = '<h3>Welcome to Viewport</h3> ' +
-	'<p><em>A simplified way to test responsive website layouts at common resolutions.</em></p> '+
-	'<p>Recently I\'ve been doing some responsive design work and found that checking screen resolutions was a bit painful. '+
-	' Dragging the window size works adequately for watching responsive styles "step-down", but it\'s tricky so get it pixel perfect and my browser windows won\'t go smaller than 400px wide.</p> '+
-	'<p>I couldn\'t find any free simple tools to do what I wanted (including hiding the scrollbar), so I decided to build my own. This is what I made - I found it to be quite useful and I hope you will too.</p>' +
-	'<p><small>Browser specific features: Webkit browsers allow you to hide the scrollbar if you wish (Chrome and Safari). I recommend you use Chrome because Safari\'s iframes tend to misbehave for me. '+
-	' I don\'t recommend using this on a mobile device, but feel free to try it.</small></p>' +
-	' <p><small><em>This webpage is provided as is with no explicit or implied guarantees for the accuracy of results or the provision of any service whatsoever. Individual results may vary. Thank you very much and good night.</em></small></p>  ';
