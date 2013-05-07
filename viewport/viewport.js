@@ -12,9 +12,10 @@ $(document).ready(function() {
 	
 	function hide_menu() { $('#menu').slideUp(300); }
 	
-	function set_device_size(width, height) { 
-		device.width(width); device.height(height);
-		write_wxh(); 
+	function set_device_size(new_width, new_height) { 
+		device.animate({width: new_width, height: new_height},200,"linear", function(){write_wxh();});
+		//device.width(new_width); device.height(new_height);
+		//write_wxh(); 
 	}
 	
 	function set_preset(id) {
