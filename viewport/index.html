@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
-<link href="viewport.css" rel="stylesheet">
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
-<script src="/js/bootbox.js"></script>
+	<meta charset='utf-8' />
+	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+	<link href="viewport.css" rel="stylesheet">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+	<script src="/js/bootbox.js"></script>
+	<title>Viewport - gregjxn.com</title>
 </head>
 
 <body>
@@ -13,10 +15,10 @@
 	<div id="app_wrapper">
 
 		<div id="url_entry">
-			URL: <input type="text" id="URL" value="http://music.gregjxn.com/track/recurring-dream/"> 
+			URL: <input type="text" id="URL" value="http://bit.ly" /> 
 			<a id="reload_btn" class="btn" title="Reload this URL" >&#8635;</a>
 			<a id="info_btn" class="btn btn-info" title="About this thing"> &#8505; </a>
-			<!-- <a id="faq_btn" class="btn" title="Frequently Asked Questions"> FAQ </a> -->
+			<!-- <a id="faq_btn" class="btn" title="Frequently Asked Questions">FAQ</a> -->
 		</div>
 
 		<div id="border">
@@ -27,10 +29,9 @@
 				</div>
 				<span id="rotate"><a href="#" title="Turn 90&deg;">&#8628;</a></span>
 				<span id="scrollbars"><a href="#" title="Hide/Show Scrollbars">&#8661;</a></span>
-
 			</div>
 			<div id="device">
-				<iframe id="viewport" src=""><p>Your browser does not support iframes.</p></iframe>
+				<iframe id="viewport" src="http://bit.ly"><p>Your browser does not support iframes.</p></iframe>
 			</div>
 			<div id="description"></div>
 		</div>
@@ -52,12 +53,14 @@
 
 <script src="viewport.js"></script>
 </body>
-<html>
+</html>
 <!--
 
 TODO LIST  &#9432;
 * Accept URL/size from the Browser URL
 * link/share buttons (limited to iframe src?)
+* FAQ popup
+* OG tags and social buttons ??
 * Border Width S M L ?
 * Cookies to remember settings ?
 * Resizing with click and drag ?
