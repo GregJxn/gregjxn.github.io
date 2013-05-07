@@ -53,9 +53,13 @@ $(document).ready(function() {
 		if (e.keyCode == 13) { load_URL($('#URL').val()); }
 	});
 
-	$('#reload').click( function(e){ 
+	$('#reload_btn').click( function(e){ 
 		$('#URL').val($('iframe').attr('src'));
 		load_URL($('#URL').val()); 
+	});
+
+	$('#info_btn').click( function(e){
+		bootbox.alert(about_text);
 	});
 
 	$('#aspect a').click( function(e){ 
@@ -110,3 +114,11 @@ var presets = eval([
 	{ 'width': 1536, 'height': 2048, 'abbr':'QXGA', 'desc':'iPad 3 (retina)' },
 ]);
 
+var about_text = '<h3>Welcome to Viewport</h3> ' +
+	'<p><em>A simplified way to test responsive website layouts at common resolutions.</em></p> '+
+	'<p>Recently I\'ve been doing some responsive design work and found that checking screen resolutions was a bit painful. '+
+	' Dragging the window size works adequately for watching responsive styles "step-down", but it\'s tricky so get it pixel perfect and my browser windows won\'t go smaller than 400px wide.</p> '+
+	'<p>I couldn\'t find any free simple tools to do what I wanted (including hiding the scrollbar), so I decided to build my own. This is what I made - I found it to be quite useful and I hope you will too.</p>' +
+	'<p><small>Browser specific features: Webkit browsers allow you to hide the scrollbar if you wish (Chrome and Safari). I recommend you use Chrome because Safari\'s iframes tend to misbehave for me. '+
+	' I don\'t recommend using this on a mobile device, but feel free to try it.</small></p>' +
+	' <p><small><em>This webpage is provided as is with no explicit or implied guarantees for the accuracy of results or the provision of any service whatsoever. Individual results may vary. Thank you very much and good night.</em></small></p>  ';

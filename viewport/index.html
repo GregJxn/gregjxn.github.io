@@ -5,6 +5,7 @@
 <link href="viewport.css" rel="stylesheet">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+<script src="/js/bootbox.js"></script>
 </head>
 
 <body>
@@ -23,24 +24,31 @@
 	</div>
 </div>
 
-<div id="url_entry">
-URL: <input type="text" id="URL" value="http://music.gregjxn.com/track/recurring-dream/"> <a id="reload" class="btn">&#8635;</a>
-</div>
+<div id="app_wrapper">
 
-<div id="border">
-	<div id="header">
-		<div id="abbr"></div>
-		<div id="screensize">
-			<a href="#" class="preset_down">&#9664;</a> <span id="wxh"></span> <a href="#" class="preset_up">&#9654;</a>
+	<div id="url_entry">
+		URL: <input type="text" id="URL" value="http://music.gregjxn.com/track/recurring-dream/"> 
+		<a id="reload_btn" class="btn">&#8635;</a>
+		<a id="info_btn" class="btn btn-info"> &#8505; </a>
+	</div>
+
+	<div id="border">
+		<div id="header">
+			<div id="abbr"></div>
+			<div id="screensize">
+				<a href="#" class="preset_down">&#9664;</a> <span id="wxh"></span> <a href="#" class="preset_up">&#9654;</a>
+			</div>
+			<span id="rotate"><a href="#" title="Turn 90&deg;">&#8628;</a></span>
 		</div>
-		<span id="rotate"><a href="#" title="Turn 90&deg;">&#8628;</a></span>
+		<div id="device">
+			<iframe id="viewport" src=""><p>Your browser does not support iframes.</p></iframe>
+		</div>
+		<div id="description"></div>
 	</div>
-	<div id="device">
-		<iframe id="viewport" src=""><p>Your browser does not support iframes.</p></iframe>
-	</div>
-	<div id="description"></div>
+
+	<div><small>Created by <a href="http://gregjxn.com/">Greg Jackson</a> &copy; 2013</small></div>
+
 </div>
-<p>More information...</p>
 <div></div>
 
 <script src="viewport.js"></script>
@@ -48,11 +56,14 @@ URL: <input type="text" id="URL" value="http://music.gregjxn.com/track/recurring
 <html>
 <!--
 
-TODO LIST
+TODO LIST  &#9432;
 * Add Scrollbar toggle to webkit UI
 * Lose HUD for less cluttered UI
+* Accept URL/preset from the Browser URL
+* link/share buttons (limited to iframe src?)
 * Border Width S M L ?
 * Cookies to remember settings ?
 * Resizing with click and drag ?
+* enter cutsom wxh to resize ?
 
 -->

@@ -1,6 +1,9 @@
-body { font-family:sans-serif; background:#e8e8e8; text-align:center; margin:0px; }
+body { font-family: helvetica, arial, sans-serif; background:#e8e8e8; margin:0px; }
 
-a, a:hover { color:#555; text-decoration: none; }
+a { color:#555; text-decoration: none; }
+a:hover {color:#777;text-decoration: none;}
+
+#app_wrapper { text-align:center; }
 
 #url_entry { 
 	margin-top:60px;
@@ -13,7 +16,7 @@ a, a:hover { color:#555; text-decoration: none; }
 	margin: 0px;
 } 
 
-#reload { font-size: 20px;}
+#reload_btn, #info_btn { font-size: 20px; }
 
 #border {
 	background:#111;
