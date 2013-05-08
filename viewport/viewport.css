@@ -35,7 +35,11 @@ a:hover { text-decoration: none; }
 	color:rgba(200,200,200,0.4);
 	}
 
-#device { width: 480px; height: 320px; }
+#device { 
+	width: 480px; 
+	height: 320px; 
+	overflow:hidden;
+}
 
 #viewport {
 	border: 1px solid #444;
