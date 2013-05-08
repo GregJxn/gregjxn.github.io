@@ -37,8 +37,7 @@ a:hover { text-decoration: none; }
 
 #device { 
 	width: 480px; 
-	height: 320px; 
-	overflow:hidden;
+	height: 320px;
 }
 
 #viewport {
