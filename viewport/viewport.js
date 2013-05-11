@@ -41,6 +41,18 @@ $(document).ready(function() {
 		device.html(device.html()); // a nasty trick to reload the iframe
 	}
 
+	// thank you http://css-tricks.com/snippets/javascript/get-url-variables/
+	function getQueryVariable(variable)
+	{
+		var query = window.location.search.substring(1);
+		var vars = query.split("&");
+		for (var i=0;i<vars.length;i++) {
+			var pair = vars[i].split("=");
+			if(pair[0] == variable){return pair[1];}
+		}
+		return(false);
+	}
+
 
 	// bind some events
 
@@ -76,12 +88,32 @@ $(document).ready(function() {
 	
 	$('#scrollbars a').click( function(e) { e.preventDefault();toggle_scrollbars(); });
 
-	device = $('#device');
-	presetID = 1;
-	aspect = 1;
-	set_preset(presetID);
 
-	load_URL($('#URL').val()); 
+	/* basic initialization */
+	device = $('#device');	
+	aspect = 1;
+
+	if(window.chrome) { $('#chrome_plug').hide(); }
+
+	// setup preset menu
+
+
+	// check GET for url, size and aspect
+	url = getQueryVariable('url');
+	if( !url ) { 
+		url = $('#URL').val(); 
+	} else {
+		if(url.substring(0,3)!='http') { url = 'http://'+url; }
+		$('#URL').val(url);
+	}
+	presetID = parseInt(getQueryVariable('size'));
+	presetID = (isNaN(presetID)) ? 1 : presetID % presets.length;
+	aspect = parseInt(getQueryVariable('aspect'));
+	aspect = (isNaN(aspect)) ? 1 : aspect%2;
+
+
+	set_preset(presetID);
+	load_URL(url); 
 
 });
 

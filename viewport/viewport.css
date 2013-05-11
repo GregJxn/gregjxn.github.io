@@ -14,12 +14,15 @@ a:hover { text-decoration: none; }
 }
 
 #url_entry input {
-	width: 30%;
+	width: 25%;
 	min-width: 250px; 
 	margin: 0px;
 }
 
-#reload_btn, #info_btn { font-size: 20px; }
+#reload_btn, #info_btn, #faq_btn,
+#menu_btn, #rotate { font-size: 20px; }
+
+
 
 
 #border {
@@ -64,18 +67,18 @@ a:hover { text-decoration: none; }
 
 #screensize { float: right; }
 
-#rotate{
+#menu_btn { padding: 0px 10px;}
+
+#rotate {
 	position: absolute;
 	right: -35px;
-	font-size: 24px;
-	font-weight: bold;
 }
 
 #scrollbars{
 	position: absolute;
-	top: 55px;
-	right: -33px;
-	font-size: 30px;
+	top: 50px;
+	right: -30px;
+	font-size: 24px;
 	font-weight: bold;
 }
 
@@ -92,3 +95,6 @@ a:hover { text-decoration: none; }
 div.hide_scrollbar #viewport::-webkit-scrollbar{ display: none; }
 #viewport::-webkit-scrollbar{  }
 
+
+/* temporary */
+#faq_btn, #menu_btn { display:none;}

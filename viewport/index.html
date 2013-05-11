@@ -2,23 +2,31 @@
 <html>
 <head>
 	<meta charset='utf-8' />
+	<title>Viewport - gregjxn.com</title>
 	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
 	<link href="viewport.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="customfont/fontawesome.css" />
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
 	<script src="/js/bootbox.js"></script>
-	<title>Viewport - gregjxn.com</title>
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-4084116-6', 'gregjxn.com');
+		ga('send', 'pageview');
+	</script>
 </head>
-
 <body>
 
 	<div id="app_wrapper">
 
 		<div id="url_entry">
 			URL: <input type="text" id="URL" value="http://bit.ly" /> 
-			<a id="reload_btn" class="btn" title="Reload this URL" >&#8635;</a>
-			<a id="info_btn" class="btn btn-info" title="About this thing"> &#8505; </a>
-			<!-- <a id="faq_btn" class="btn" title="Frequently Asked Questions">FAQ</a> -->
+			<a id="reload_btn" class="btn" title="Reload this URL" ><i class="icon-repeat"></i></a>
+			<a id="info_btn" class="btn btn-info" title="About this thing"><i class="icon-info-sign"></i></a>
+			<a id="faq_btn" class="btn btn-info" title="Frequently Asked Questions"><i class="icon-question-sign"></i></a>
 		</div>
 
 		<div id="border">
@@ -26,9 +34,11 @@
 				<div id="abbr"></div>
 				<div id="screensize">
 					<a href="#" class="preset_down">&#9664;</a> <span id="wxh"></span> <a href="#" class="preset_up">&#9654;</a>
+					<a href="#" id="menu_btn" class=""><i class="icon-list-ul"></i></a>
+					<div id="presets_menu"></div>
 				</div>
-				<span id="rotate"><a href="#" title="Turn 90&deg;">&#8628;</a></span>
-				<span id="scrollbars"><a href="#" title="Hide/Show Scrollbars">&#8661;</a></span>
+				<span id="rotate"><a href="#" title="Turn 90&deg;"><i class="icon-retweet"></i></a></span>
+				<span id="scrollbars"><a href="#" title="Hide/Show Scrollbars"><i class="icon-resize-vertical"></i></a></span>
 			</div>
 			<div id="device">
 				<iframe id="viewport" src="http://bit.ly"><p>Your browser does not support iframes.</p></iframe>
@@ -36,7 +46,15 @@
 			<div id="description"></div>
 		</div>
 
-		<div><small>Created by <a href="http://gregjxn.com/">Greg Jackson</a> &copy; 2013</small></div>
+		<div><small>Created by <a href="http://gregjxn.com/">Greg Jackson</a> &copy; 2013.</small></div>
+		<div><small>Made using 
+			<a href="http://twitter.github.io/bootstrap/">Bootstrap</a>,
+			<a href="http://bootboxjs.com/">Bootbox</a>, 
+			<a href="http://fortawesome.github.com/Font-Awesome/">FontAwesome</a> and 
+			<a href="http://www.icnfnt.com/">icnfnt</a>, and 
+			<a href="http://jquery.com/">jQuery</a>.
+		</small></div>
+		<div id="chrome_plug"><small>Works best with Google's <a href="www.google.com/chrome/">Chrome</a> browser.</small></div>
 
 	</div>
 
@@ -57,16 +75,11 @@
 <!--
 
 TODO LIST  &#9432;
-* Accept URL/size from the Browser URL
 * link/share buttons (limited to iframe src?)
 * FAQ popup
 * OG tags and social buttons ??
-* Border Width S M L ?
-* Cookies to remember settings ?
-* Resizing with click and drag ?
-* enter cutsom wxh to resize ?
 
-OTHER OPTIONS
+OTHER OPTIONS in FAQ?
 * http://toddmotto.com/labs/responsive/
 * http://www.responsinator.com/
 
