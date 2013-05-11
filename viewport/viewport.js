@@ -72,6 +72,10 @@ $(document).ready(function() {
 		bootbox.alert(info_text);
 	});
 
+	$('#faq_btn').click( function(e){
+		bootbox.alert($("#faq_text").html());
+	});
+
 	$('#menu_btn').click( function(e){
 		e.preventDefault();
 		if($('#presets_menu').is(":visible")) {

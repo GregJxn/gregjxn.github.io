@@ -60,13 +60,25 @@
 
 
 	<div id="info_text">
-		<h3>Welcome to Viewport</h3>
+		<h3>Welcome to Viewport v1.0</h3>
 		<p><em>A simplified way to test responsive website layouts at common resolutions.</em></p>
 		<p>Recently I've been doing some responsive design work and I found that checking screen resolutions was a bit of a pain.
 		 Dragging the window size works adequately for watching responsive styles "step-down", but it's tricky so get it pixel perfect and my browser windows won't go smaller than 400px wide.</p>
-		 <p>I couldn't find any free simple tools to do exactly what I wanted (including hiding the scrollbar), so I decided to build my own. This is what I made - I found it to be quite useful and I hope you will too.</p>
-		<p><small>Browser specific features: WebKit browsers allow you to hide the scrollbar if you wish (Chrome and Safari). I recommend you use Chrome because Safari's iframes tend to misbehave for me.  I don't recommend using this on a mobile device, but feel free to try it.</small></p>
-		<p><small><em>This webpage is provided as is with no explicit or implied guarantees for the accuracy of results or the provision of any service whatsoever. Individual results may vary. Enjoy.</em></small></p>  
+		 <p>I couldn't find any free simple tools to do exactly what I wanted (including hiding the scrollbar), so I decided to build my own. This is what I made - I have found it to be quite useful and I hope you will too.</p>
+		<p><small>Browser specific features: WebKit browsers (Chrome and Safari) allow us to hide the scrollbar, but stll allow scrolling. I recommend using Chrome because Safari's iframes tend to misbehave for me. I don't recommend using this on a mobile device, but feel free to try it.</small></p>
+		<p><small><em>This webpage is provided as is with no explicit or implied guarantees for the accuracy of results or for the provision of any service whatsoever. Individual results may vary. Enjoy.</em></small></p>  
+	</div>
+
+	<div id="faq_text">
+		<h4>Frequently Asked Questions</h4>
+		<h5>Q: Why doesn't it work on my site?</h5>
+		<p>A: Viewport is really just a resizable iframe with a pretty border. Any sites that use <a href="http://en.wikipedia.org/wiki/Framekiller">frame-busting</a> techniques will not work with this application.</p>
+		<h5>Q: Why does the Share Link feature use the original URL entered? </h5>
+		<p>A: In an effort to thwart cross site scripting attack (XSS), browsers have set security limitations on the data that is available when the parent page and the iframe page are from different domains. The URL enetered is the best we can do.</p>
+		<h5>Q: Can you make scrollbars hideable in non-WebKit browsers?</h5>
+		<p>A: Yes, we can do that, but we don't have the ability to detect when we should. Due to iframe security limitations, we cannot detect if the scrollbar is being displayed. If we try to hide the scrollbars when they are not being displayed, it will hide some of the page.</p>
+		<h5>Q: I don't like your implementation, what else can I use?</h5>
+		<p>A: What a shame that you don't like it. You could try <a href="http://toddmotto.com/labs/responsive/">todd's jResize</a> or maybe <a href="http://www.responsinator.com/">The Responsinator</a>.</p>
 	</div>
 
 <script src="viewport.js"></script>
@@ -76,11 +88,6 @@
 
 TODO LIST  &#9432;
 * link/share buttons (limited to iframe src?)
-* FAQ popup
 * OG tags and social buttons ??
-
-OTHER OPTIONS in FAQ?
-* http://toddmotto.com/labs/responsive/
-* http://www.responsinator.com/
 
 -->

@@ -105,13 +105,10 @@ a:hover { text-decoration: none; }
 	line-height: 40px;
 }
 
-#info_text { display:none; }
+#info_text, #faq_text { display:none; }
 
 
 /* use this to hide iframe scrollbar but keep functionality in webkit */
 div.hide_scrollbar #viewport::-webkit-scrollbar{ display: none; }
 #viewport::-webkit-scrollbar{  }
 
-
-/* temporary */
-#faq_btn, #menu_btn { display:none;}
