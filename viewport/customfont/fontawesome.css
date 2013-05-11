@@ -269,8 +269,11 @@ ul.icons li [class*=" icon-"] {
     height: .75em;
   }
 }.icon-repeat:before		{ content: "\f021"; }
-.icon-question-sign:before		{ content: "\f022"; }
-.icon-info-sign:before		{ content: "\f023"; }
-.icon-retweet:before		{ content: "\f024"; }
-.icon-resize-vertical:before		{ content: "\f025"; }
-.icon-list-ul:before		{ content: "\f026"; }
+.icon-share:before		{ content: "\f022"; }
+.icon-chevron-left:before		{ content: "\f023"; }
+.icon-chevron-right:before		{ content: "\f024"; }
+.icon-question-sign:before		{ content: "\f025"; }
+.icon-info-sign:before		{ content: "\f026"; }
+.icon-retweet:before		{ content: "\f027"; }
+.icon-resize-vertical:before		{ content: "\f028"; }
+.icon-list-ul:before		{ content: "\f029"; }
