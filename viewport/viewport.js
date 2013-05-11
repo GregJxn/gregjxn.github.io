@@ -24,6 +24,8 @@ $(document).ready(function() {
 		presetID=id;
 		$('#abbr').text(presets[id].abbr);
 		$('#description').text(presets[id].desc);
+		$('#presets_menu ul li').removeClass('active');
+		$('#presetline_'+id).addClass('active');
 	}
 	
 	function write_wxh() {  
@@ -70,6 +72,15 @@ $(document).ready(function() {
 		bootbox.alert(info_text);
 	});
 
+	$('#menu_btn').click( function(e){
+		e.preventDefault();
+		if($('#presets_menu').is(":visible")) {
+			$('#presets_menu').slideUp();	
+		} else {
+			$('#presets_menu').slideDown();
+		}
+		
+	});
 
 	$('#aspect a').click( function(e){ 
 		e.preventDefault();
@@ -96,6 +107,16 @@ $(document).ready(function() {
 	if(window.chrome) { $('#chrome_plug').hide(); }
 
 	// setup preset menu
+	menu = '<ul>';
+	for (var i=0;i<presets.length;i++) {
+		menu += '<li id="presetline_'+i+'">';
+		menu += '<a href="#" data-presetid="'+i+'">'+presets[i].abbr+' : '+presets[i].width+'x'+presets[i].height+'</a>';
+		menu += '</li>';
+	}
+	menu +='</ul>';
+	$('#presets_menu').html(menu);
+	$('#menu_btn').show();
+
 
 
 	// check GET for url, size and aspect
@@ -111,6 +132,11 @@ $(document).ready(function() {
 	aspect = parseInt(getQueryVariable('aspect'));
 	aspect = (isNaN(aspect)) ? 1 : aspect%2;
 
+	$('#presets_menu a').click( function(e){ 
+		e.preventDefault();
+		set_preset($(this).data('presetid'));
+		$('#presets_menu').slideUp();
+	});
 
 	set_preset(presetID);
 	load_URL(url); 

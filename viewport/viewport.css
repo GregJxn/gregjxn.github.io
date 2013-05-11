@@ -19,7 +19,7 @@ a:hover { text-decoration: none; }
 	margin: 0px;
 }
 
-#reload_btn, #info_btn, #faq_btn,
+#reload_btn, #info_btn, #faq_btn { font-size: 16px; }
 #menu_btn, #rotate { font-size: 20px; }
 
 
@@ -30,7 +30,7 @@ a:hover { text-decoration: none; }
 	margin: 20px auto 0px;
 	border: 45px solid #080808;
 	display:inline-block;
-	font-size:14px;
+	font-size:15px;
 	box-shadow: 0 8px 15px 8px #ccc;	
 	border-radius: 15px;
 	-moz-border-radius: 15px;
@@ -68,6 +68,23 @@ a:hover { text-decoration: none; }
 #screensize { float: right; }
 
 #menu_btn { padding: 0px 10px;}
+
+#presets_menu {
+	position: absolute;
+	width: 190px;
+	right: -2px;
+	text-align: left;
+	border: 1px solid #444;
+	border-top: none;
+	background:#000;
+	background: rgba(0,0,0,0.85);
+	display:none;
+}
+#presets_menu ul { list-style-type: none; margin:0px; padding:0px;}
+#presets_menu li { line-height:22px;padding:0px 10px; }
+#presets_menu li:hover { background:#111; }
+#presets_menu li.active { background:#000; }
+#presets_menu li.active a { color:#eee;}
 
 #rotate {
 	position: absolute;
