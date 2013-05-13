@@ -60,7 +60,7 @@
 
 
 	<div id="info_text">
-		<h3>Welcome to Viewport v1.0</h3>
+		<h3>Welcome to Viewport <span id="version"></span></h3>
 		<p><em>A simplified way to test responsive website layouts at common resolutions.</em></p>
 		<p>Recently I've been doing some responsive design work and I found that checking screen resolutions was a bit of a pain.
 		 Dragging the window size works adequately for watching responsive styles "step-down", but it's tricky so get it pixel perfect and my browser windows won't go smaller than 400px wide.</p>
@@ -71,6 +71,8 @@
 
 	<div id="faq_text">
 		<h4>Frequently Asked Questions</h4>
+		<h5>Q: How did you make this?</h5>
+		<p>A: I started with static page with an iframe on it, wrapped it in a border, added some jQuery functionality to allow resizing, and kept on embellishing until we got to the final product - while trying to keep in mind the original goals of simple, light and functional.</p>
 		<h5>Q: Why doesn't it work on my site?</h5>
 		<p>A: Viewport is really just a resizable iframe with a pretty border. Any sites that use <a href="http://en.wikipedia.org/wiki/Framekiller">frame-busting</a> techniques will not work with this application.</p>
 		<h5>Q: Why does the Share Link feature use the original URL entered? </h5>

@@ -1,7 +1,8 @@
 $(document).ready(function() {
 
 	// create some variables
-	var presetID, device, aspect;
+	var presetID, device, aspect, version, timeoutID;
+	version = '0.9';
 
 	//create some functions
 
@@ -43,6 +44,10 @@ $(document).ready(function() {
 		device.html(device.html()); // a nasty trick to reload the iframe
 	}
 
+	function close_preset_menu() {
+		$('#presets_menu').slideUp();
+	}
+
 	// thank you http://css-tricks.com/snippets/javascript/get-url-variables/
 	function getQueryVariable(variable)
 	{
@@ -76,10 +81,11 @@ $(document).ready(function() {
 		bootbox.alert($("#faq_text").html());
 	});
 
+
 	$('#menu_btn').click( function(e){
 		e.preventDefault();
 		if($('#presets_menu').is(":visible")) {
-			$('#presets_menu').slideUp();	
+			close_preset_menu();
 		} else {
 			$('#presets_menu').slideDown();
 		}
@@ -121,7 +127,7 @@ $(document).ready(function() {
 	$('#presets_menu').html(menu);
 	$('#menu_btn').show();
 
-
+	$('#version').text('v'+version);
 
 	// check GET for url, size and aspect
 	url = getQueryVariable('url');
