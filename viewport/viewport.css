@@ -84,7 +84,8 @@ a:hover { text-decoration: none; }
 #presets_menu li { line-height:22px;padding:0px 10px; }
 #presets_menu li:hover { background:#111; }
 #presets_menu li.active { background:#000; }
-#presets_menu li.active a { color:#eee;}
+#presets_menu li.active a { color:#eee; }
+#presets_menu li a { width:100%; display:inline-block; }
 
 #rotate {
 	position: absolute;
