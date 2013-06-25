@@ -80,12 +80,16 @@ a:hover { text-decoration: none; }
 	background: rgba(0,0,0,0.85);
 	display:none;
 }
-#presets_menu ul { list-style-type: none; margin:0px; padding:0px;}
+#presets_menu ul { list-style-type: none; margin:0px; padding:0px; }
 #presets_menu li { line-height:22px;padding:0px 10px; }
 #presets_menu li:hover { background:#111; }
 #presets_menu li.active { background:#000; }
 #presets_menu li.active a { color:#eee; }
 #presets_menu li a { width:100%; display:inline-block; }
+
+#presets_menu li a div { display:inline-block; }
+#presets_menu.aspect_0 li a div.aspect_1 { display:none; }
+#presets_menu.aspect_1 li a div.aspect_0 { display:none; }
 
 #rotate {
 	position: absolute;

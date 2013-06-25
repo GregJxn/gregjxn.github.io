@@ -14,6 +14,14 @@ $(document).ready(function() {
 	function set_device_size(new_width, new_height) { 
 		device.animate({width: new_width, height: new_height},200,"linear", function(){write_wxh();});
 	}
+
+	function set_aspect(new_aspect) {
+		aspect = (isNaN(new_aspect)) ? 1 : new_aspect%2;
+		// $('#presets_menu ul').removeClass('active');
+		// $('#menu_'+aspect).addClass('active');
+		$('#presets_menu').removeClass('aspect_0 aspect_1');
+		$('#presets_menu').addClass('aspect_'+aspect);
+	}
 	
 	function set_preset(id) {
 		id = ((id+presets.length) % presets.length);
@@ -89,20 +97,21 @@ $(document).ready(function() {
 		} else {
 			$('#presets_menu').slideDown();
 		}
-		
 	});
 
-	$('#aspect a').click( function(e){ 
-		e.preventDefault();
-		set_device_size(device.height(),device.width()); 
-		aspect=(aspect==0); 
+	$('#menu_btn, #presets_menu').mouseleave( function(e){
+		timeoutID = setTimeout(close_preset_menu,800);
 	});
 
 	$('#rotate a').click( function(e){ 
 		e.preventDefault();
 		set_device_size(device.height(),device.width()); 
-		aspect=(aspect==0); 
-	});	
+		set_aspect(Math.abs(aspect-1));
+	});
+
+	$('#menu_btn, #presets_menu').mouseenter( function(e){
+		clearTimeout(timeoutID);
+	});
 
 	$('.preset_down').click( function(e) { e.preventDefault();set_preset(--presetID); });
 	$('.preset_up').click( function(e) { e.preventDefault();set_preset(++presetID); });
@@ -116,15 +125,24 @@ $(document).ready(function() {
 
 	if(window.chrome) { $('#chrome_plug').hide(); }
 
-	// setup preset menu
-	menu = '<ul>';
+	// setup preset menus
+	var preset_menus = ['',''];
+
+	var menu_wxh = '<ul id="menu_0" class="active">';
+	var menu_hxw = '<ul id="menu_1">';
 	for (var i=0;i<presets.length;i++) {
-		menu += '<li id="presetline_'+i+'">';
-		menu += '<a href="#" data-presetid="'+i+'">'+presets[i].abbr+' : '+presets[i].width+'x'+presets[i].height+'</a>';
-		menu += '</li>';
+
+		menu_wxh += '<li id="presetline_'+i+'">';
+		menu_wxh += '<a href="#" data-presetid="'+i+'">'+presets[i].abbr+' : ';
+		menu_wxh += '<div class="aspect_1">'+presets[i].height+'x'+presets[i].width+'</div>';
+		menu_wxh += '<div class="aspect_0">'+presets[i].width+'x'+presets[i].height+'</div>';
+		menu_wxh += '</a>';
+		menu_wxh += '</li>';
 	}
-	menu +='</ul>';
-	$('#presets_menu').html(menu);
+	menu_wxh += '</ul>';
+	menu_hxw += '</ul>';
+
+	$('#presets_menu').html(menu_wxh+menu_hxw);
 	$('#menu_btn').show();
 
 	$('#version').text('v'+version);
@@ -134,26 +152,26 @@ $(document).ready(function() {
 	if( !url ) { 
 		url = $('#URL').val(); 
 	} else {
-		if(url.substring(0,3)!='http') { url = 'http://'+url; }
+		if(url.substring(0,4)!='http') { url = 'http://'+url; }
 		$('#URL').val(url);
 	}
 	presetID = parseInt(getQueryVariable('size'));
 	presetID = (isNaN(presetID)) ? 1 : presetID % presets.length;
 	aspect = parseInt(getQueryVariable('aspect'));
-	aspect = (isNaN(aspect)) ? 1 : aspect%2;
 
 	$('#presets_menu a').click( function(e){ 
 		e.preventDefault();
 		set_preset($(this).data('presetid'));
 		$('#presets_menu').slideUp();
-	});
+	});	
 
 	set_preset(presetID);
+	set_aspect(aspect);
 	load_URL(url); 
 
 });
 
-var presets = eval([
+var presets = [
 	{ 'width': 240,  'height': 320,  'abbr':'QVGA', 'desc':'Common Low Resolution' },
 	{ 'width': 320,  'height': 480,  'abbr':'HVGA', 'desc':'iPhone 3, 3G' },
 	{ 'width': 360,  'height': 640,  'abbr':'nHD', 'desc':'Nokia N8, N97, E7 and X6' },
@@ -168,4 +186,4 @@ var presets = eval([
 	{ 'width': 1024, 'height': 1280, 'abbr':'SXGA', 'desc':'Standard 4:3 desktop' },
 	{ 'width': 1200, 'height': 1600, 'abbr':'XUGA', 'desc':'Large 4:3 desktop' },
 	{ 'width': 1536, 'height': 2048, 'abbr':'QXGA', 'desc':'iPad 3 (retina)' },
-]);
+];
