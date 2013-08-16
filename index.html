@@ -7,7 +7,8 @@
 	<meta name="description" content="GregJxn.com : Landing page for gregjxn.com" />
 	<title>GregJxn.com</title>
 	<link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
+	<link rel="stylesheet" type="text/css" media="screen" href="stylesheets/gregjxn.css">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -21,44 +22,55 @@
 <body>
 
     <!-- HEADER -->
-    <div id="header_wrap" class="outer">
+    <div id="header_wrap" class="outer glow_me">
         <header class="inner">
 			<a id="forkme_banner" href="https://github.com/GregJxn">View on GitHub</a>
 			<h1 id="project_title">GregJxn.com</h1>
 			<h2 id="project_tagline">Stuff related to Greg Jackson</h2>
-			<h3>( aka gregjxn.github.io )</h3>
-        </header>
+		</header>
+		<div id="navbar">
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/wp/">WordPress</a></li>
+				<li><a href="/jsfun/">JS Fluff</a></li>
+				<li><a href="/downloads/">Downloads</a></li>
+				<li><a href="http://measurablewins.gregjxn.com/">Blogger</a></li>
+				<li><a href="http://music.gregjxn.com/">My Music</a></li>
+			</ul>	
+        </div>
     </div>
 
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h3>Welcome to GitHub Pages.</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+		<h3>Who Is GregJxn?</h3>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+		<p>My name is Greg Jackson, I often use the abreviation GregJxn for online profiles and such.</p>
+		<p>I am a pretty normal-ish guy who enojoys software-engineering, music-making, idea-spinning, gaming, playing guitar and drinking coffee.</p>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
 
-<h3>Designer Templates</h3>
+		<h3>What Is This Site For?</h3>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+		<p>This collection of static pages tries to bring together all my "internet stuff". I like making things -  
+			Creating things is a big driver of who I am, so there are <a href="/wp/">WordPress plugins</a>, <a href="/jsfun/">Javascript ideas</a>, some <a href="/downloads/">downloadable stuff</a>, and recordings of <a href="http://music.gregjxn.com/">music</a> I have composed, and my <a href="http://measurablewins.gregjxn.com/">Measurable Wins</a> blog.</p>
 
-<h3>Rather Drive Stick?</h3>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+		<p>This page is a bit of a taster of some of the content here. The header area features my Glow javascript color fader.</p>
 
-<h3>Authors and Contributors</h3>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+		<p>Here's a recent release from my music page: </p>
+		<p>
+			<iframe style="border: 0; width: 100%; height: 120px;" src="http://bandcamp.com/EmbeddedPlayer/track=1301154312/size=medium/bgcol=ffffff/linkcol=0687f5/transparent=true/" seamless><a href="http://music.gregjxn.com/track/enchilada-flaps">Enchilada Flaps by Greg Jackson</a></iframe>
+		</p>
+		<p>
+			You can download my music for free (Pay-What-You-Want) from my <a href="http://gregjackson.bandcamp.com/">Bandcamp page</a>, or <a href="https://www.facebook.com/pages/Greg-Jackson/25871085168">Like my Facebook page</a> if you want to keep up to date.
+		</p>
 
-<h3>Support or Contact</h3>
+		<!--<p>Here's a couple of screenshots from the Fontsoup screensaver for Mac OS X I wrote in Obj-C.</p>-->
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+		<p></p>
+
       </section>
     </div>
 
@@ -70,6 +82,6 @@ $ git checkout gh-pages
 	</div>
 
 
-
+<script type="text/javascript" src="/javascripts/glow.js"></script>
 </body>
 </html>
